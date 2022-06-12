@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import * as Style from './styles';
 import searchAlbumsAPI from '../../services/searchAlbumsAPI';
 import Header from '../../components/Header';
+import { LoadingWrapper, Spinner } from '../../components/Loading';
 
 export default class Search extends React.Component {
   state = {
@@ -61,54 +63,64 @@ export default class Search extends React.Component {
     return (
       <div data-testid="page-search">
         <Header />
-        <form>
-          <label htmlFor="search-artist-input">
-            <input
-              id="search-artist-input"
-              type="text"
-              name="artistFormName"
-              value={artistFormName}
-              data-testid="search-artist-input"
-              onChange={this.handleChangeForm}
-            />
-          </label>
-          <button
+        <Style.Container>
+          <Style.Input
+            id="search-artist-input"
+            type="text"
+            name="artistFormName"
+            value={artistFormName}
+            data-testid="search-artist-input"
+            onChange={this.handleChangeForm}
+            placeholder="Nome do artista"
+          />
+          <Style.Button
             type="submit"
             data-testid="search-artist-button"
             disabled={!this.buttonDisabled()}
             onClick={this.onButtonClick}
           >
-            Pesquisar
-          </button>
-        </form>
+            Procurar
+          </Style.Button>
+        </Style.Container>
 
         { loading
-          ? <p>Carregando...</p>
+          ? (
+            <LoadingWrapper>
+              <Spinner />
+            </LoadingWrapper>
+          )
           : (
             <div className="album-list">
               {artistAlbum.length > 0 && (
-                <>
-                  <h2>
-                    Resultado de álbuns de:
+                <Style.SearchResults>
+                  <Style.Subtitle>
+                    Resultado para álbuns de:
                     {' '}
                     {artistName}
-                  </h2>
-                  <div className="">
-                    { artistAlbum.map(({ collectionId, collectionName }) => (
-                      <Link
-                        to={`/album/${collectionId}`}
+                  </Style.Subtitle>
+                  <Style.AlbumsContainer>
+                    { artistAlbum.map(({
+                      collectionId, collectionName, artworkUrl100, artistName: ArtistName,
+                    }) => (
+                      <Style.Album
                         key={collectionId}
-                        data-testid={`link-to-album-${collectionId}`}
                       >
-                        {collectionName}
-                      </Link>
+                        <Style.AlbumImageWrapper><img src={artworkUrl100} alt="album-artwork" /></Style.AlbumImageWrapper>
+                        <Link
+                          to={`/album/${collectionId}`}
+                          data-testid={`link-to-album-${collectionId}`}
+                        >
+                          {collectionName}
+                        </Link>
+                        <Style.ArtistName>{ArtistName}</Style.ArtistName>
+                      </Style.Album>
                     ))}
-                  </div>
-                </>
+                  </Style.AlbumsContainer>
+                </Style.SearchResults>
               )}
-              <div>
-                { hasAlbum ? null : <p>Nenhum álbum foi encontrado</p> }
-              </div>
+              <Style.SearchResults>
+                { hasAlbum ? null : <Style.Subtitle>Nenhum álbum foi encontrado</Style.Subtitle> }
+              </Style.SearchResults>
             </div>
           )}
       </div>

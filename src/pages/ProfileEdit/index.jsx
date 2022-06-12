@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { getUser, updateUser } from '../../services/userAPI';
 import Header from '../../components/Header';
+import { LoadingWrapper, Spinner } from '../../components/Loading';
 
 export default class ProfileEdit extends React.Component {
   state = {
@@ -65,7 +66,11 @@ export default class ProfileEdit extends React.Component {
 
         {
           loading
-            ? <p>Carregando...</p>
+            ? (
+              <LoadingWrapper>
+                <Spinner />
+              </LoadingWrapper>
+            )
             : (
               <form>
                 <label htmlFor="edit-input-name">

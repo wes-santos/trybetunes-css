@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import GlobalStyle from './assets/styles/global';
 import Login from './pages/Login';
 import Search from './pages/Search';
 import Album from './pages/Album';
@@ -22,6 +23,7 @@ class App extends React.Component {
           <Route path="/profile" component={Profile} />
           <Route path="*" component={NotFound} />
         </Switch>
+        <GlobalStyle />
       </BrowserRouter>
     );
   }

@@ -9,6 +9,7 @@ import {
   getFavoriteSongs,
   removeSong,
 } from '../../services/favoriteSongsAPI';
+import { LoadingWrapper, Spinner } from '../../components/Loading';
 
 export default class Album extends React.Component {
   state = {
@@ -73,7 +74,11 @@ export default class Album extends React.Component {
         <Header />
 
         { loading || loadingFavorites
-          ? <p>Carregando...</p>
+          ? (
+            <LoadingWrapper>
+              <Spinner />
+            </LoadingWrapper>
+          )
           : (
             <>
               <div className="title-content">

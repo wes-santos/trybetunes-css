@@ -7,6 +7,7 @@ import {
   addSong,
   removeSong,
 } from '../../services/favoriteSongsAPI';
+import { LoadingWrapper, Spinner } from '../../components/Loading';
 
 export default class Favorites extends React.Component {
   state = {
@@ -46,7 +47,11 @@ export default class Favorites extends React.Component {
         <Header />
 
         {loading
-          ? <p> Carregando...</p>
+          ? (
+            <LoadingWrapper>
+              <Spinner />
+            </LoadingWrapper>
+          )
           : (
             favoriteSongs.map((song) => (
               <MusicCard
