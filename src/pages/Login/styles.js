@@ -19,7 +19,7 @@ export const Button = styled.button`
   font-size: 28px;
   padding: 15px 185px;
   color: white;
-  background: linear-gradient(90deg, rgba(151,61,242,1) 0%, rgba(4,217,196,1) 100%);
+  background: linear-gradient(141deg, rgba(188,61,242,1) 0%, rgba(4,217,196,1) 100%);
   border: none;
   border-radius: 10px;
   margin-top: 25px;
@@ -59,6 +59,7 @@ export const ImageWrapper = styled.div`
 export const FormWrapper = styled.div`
   align-items: center;
   background: linear-gradient(141deg, rgba(76,21,130,1) 0%, rgba(42,8,89,1) 100%);
+  border-right: solid 3px rgba(188, 61, 242, 0.4);
   display: flex;
   flex-direction: column;
   height: 100%;
