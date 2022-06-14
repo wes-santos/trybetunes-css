@@ -1,10 +1,17 @@
 import styled from 'styled-components';
+import loginBackground from './loginBackground.svg';
 
 export const Title = styled.h1`
   color: white;
   font-weight: 700;
-  font-size: 58px;
+  font-size: 5em;
   line-height: 61px;
+  transition: 0.4s ease-in-out;
+  margin-bottom: 0.4em;
+
+  &:hover {
+    color: #ACF2EB;
+  }
 `;
 
 export const Button = styled.button`
@@ -12,13 +19,14 @@ export const Button = styled.button`
   font-size: 28px;
   padding: 15px 185px;
   color: white;
-  background-color: #D705F2;
+  background: linear-gradient(90deg, rgba(151,61,242,1) 0%, rgba(4,217,196,1) 100%);
   border: none;
   border-radius: 10px;
   margin-top: 25px;
+  transition: 0.4s ease-in-out;
 
   &:hover {
-    background-color: #a003b5;
+    opacity: 0.7;
   }
 `;
 
@@ -42,43 +50,45 @@ export const ImageWrapper = styled.div`
   justify-content: center;
   padding: 20px;
   width: 100%;
-
-  img {
-    width: 90%;
-    height: 90%;
-  }
-
+  background-image: url(${loginBackground});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 `;
 
 export const FormWrapper = styled.div`
   align-items: center;
-  background-color: #023E73;
+  background: linear-gradient(141deg, rgba(76,21,130,1) 0%, rgba(42,8,89,1) 100%);
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: space-around;
+  justify-content: center;
   padding: 20px;
   width: 60%;
 
   label {
-    color: #F1F0FF;
+    color: white;
     font-size: 18px;
-    opacity: 0.75;
   }
 
   input {
     background-color: transparent;
-    border: solid 2px #F1F0FF;
+    border: 2px solid #973DF2;
     border-radius: 10px;
-    color: #F1F0FF;
+    color: white;
     font-size: 22px;
     margin-top: 8px;
     padding: 20px;
     width: 100%;
+    transition: 0.3s ease-in-out;
+  }
+
+  input:hover {
+    border-color: #04D9C4;
   }
 
   input::placeholder {
-    color: #F1F0FF;;
+    color: white;
     font-size: 22px;
     text-align: left;
   }
@@ -87,5 +97,6 @@ export const FormWrapper = styled.div`
     color: white;
     font-size: 22px;
     outline: none;
+    border-color: #04D9C4;
   }
 `;
