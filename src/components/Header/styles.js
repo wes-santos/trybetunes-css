@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
-  background-color: #023E73;
+  background: linear-gradient(141deg, rgba(188,61,242,1) 0%, rgba(4,217,196,1) 100%);
   color: #F1F0FF;
   display: flex;
   font-size: 18px;

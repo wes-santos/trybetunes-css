@@ -15,6 +15,19 @@ export default class Search extends React.Component {
     hasAlbum: true,
   };
 
+  componentDidMount() {
+    const root = document.getElementById('root');
+    root.style.height = '100vh';
+  }
+
+  componentDidUpdate() {
+    const root = document.getElementById('root');
+    const { loading } = this.state;
+    if (loading) {
+      root.style.height = '100%';
+    }
+  }
+
   handleChangeForm = ({ target }) => {
     const { name, value } = target;
 
