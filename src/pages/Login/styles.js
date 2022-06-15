@@ -100,4 +100,8 @@ export const FormWrapper = styled.div`
     outline: none;
     border-color: #04D9C4;
   }
+
+  input:active {
+    background-color: black;
+  }
 `;

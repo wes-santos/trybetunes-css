@@ -13,24 +13,30 @@ export const Input = styled.input`
   background-repeat: no-repeat;
   background-position: right;
   background-origin: content-box;
-  border: 2px solid grey;
+  border: 3px solid #973DF2;
   border-radius: 10px;
-  color: grey;
+  color: #21038C;
   font-size: 18px;
   padding: 20px;
   width: 700px;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    border-color: #04D9C4;
+  }
 
   &::placeholder {
     font-size: 18px;
   }
 
   &:focus {
+    border-color: #04D9C4;
     outline: none;
   }
 `;
 
 export const Button = styled.button`
-  background-color: #0597F2;
+  background: linear-gradient(141deg, rgba(188,61,242,1) 0%, rgba(4,217,196,1) 100%);
   border: none;
   border-radius: 10px;
   color: #F1F0FF;
@@ -38,10 +44,19 @@ export const Button = styled.button`
   font-weight: 700;
   margin-left: 20px;
   padding: 20px 60px;
+  transition: 0.4s ease-in-out;
+ 
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 export const Subtitle = styled.h2`
-  color: grey;
+  color: white;
+  background: -webkit-linear-gradient(146deg, white 0%, rgba(4,217,196,1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 24px;
   margin: 20px 0;
 `;
@@ -60,7 +75,8 @@ export const AlbumsContainer = styled.div`
 `;
 
 export const Album = styled.div`
-  background-color: #023E73;
+  /* background-color: #023E73; */
+  background: linear-gradient(146deg, rgba(188,61,242,1) 0%, rgba(4,217,196,1) 100%);
   border-radius: 10px;
   /* padding: 10px; */
   width: 31%;

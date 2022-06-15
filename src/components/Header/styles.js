@@ -14,8 +14,9 @@ export const Nav = styled.nav`
   display: flex;
 
   a {
-    color: #F1F0FF;
+    color: #fff;
     text-decoration: none;
+    text-transform: uppercase;
     font-size: 18px;
     font-weight: 700;
     margin-right: 10px;

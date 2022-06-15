@@ -5,6 +5,7 @@ import * as Style from './styles';
 import searchAlbumsAPI from '../../services/searchAlbumsAPI';
 import Header from '../../components/Header';
 import { LoadingWrapper, Spinner } from '../../components/Loading';
+import './search.css';
 
 export default class Search extends React.Component {
   state = {
