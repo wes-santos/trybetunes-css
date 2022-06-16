@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import * as Style from './styles';
 import MusicCard from '../../components/MusicCard';
 import getMusics from '../../services/musicsAPI';
 import Header from '../../components/Header';
@@ -53,7 +54,6 @@ export default class Album extends React.Component {
 
   AddFavoriteSong = async ({ target: { value, checked } }) => {
     const { musicList } = this.state;
-
     const song = musicList.find((music) => music.trackId === parseInt(value, 10));
 
     const updateFunction = checked ? addSong : removeSong;
@@ -70,42 +70,52 @@ export default class Album extends React.Component {
       loading, musicList, album, favoriteSongs, loadingFavorites,
     } = this.state;
     return (
-      <div data-testid="page-album">
+      <Style.Wrapper data-testid="page-album">
         <Header />
-
-        { loading || loadingFavorites
-          ? (
-            <LoadingWrapper>
-              <Spinner />
-            </LoadingWrapper>
-          )
-          : (
-            <>
-              <div className="title-content">
-                {album && (
-                <h3>
-                  <p data-testid="artist-name">
-                    {album.artistName}
-                  </p>
-                  <p data-testid="album-name">
-                    {album.collectionName}
-                  </p>
-                </h3>
-                )}
-              </div>
-              <div className="playlist">
-                {musicList.map((music) => (
-                  <MusicCard
-                    key={music.trackId}
-                    music={music}
-                    AddFavoriteSong={this.AddFavoriteSong}
-                    favorites={favoriteSongs}
-                  />
-                ))}
-              </div>
-            </>
-          )}
-      </div>
+        <Style.Container>
+          { loading || loadingFavorites
+            ? (
+              <LoadingWrapper>
+                <Spinner />
+              </LoadingWrapper>
+            )
+            : (
+              <>
+                <div className="title-content">
+                  {album && (
+                  <>
+                    <Style.ImageWrapper>
+                      <img
+                        src={album.artworkUrl100.replace('100x100', '600x600')}
+                        alt="album artwork"
+                      />
+                    </Style.ImageWrapper>
+                    <Style.Title>
+                      {album.artistName}
+                    </Style.Title>
+                    <Style.Subtitle>
+                      {album.collectionName}
+                    </Style.Subtitle>
+                  </>
+                  )}
+                </div>
+                <div className="playlist">
+                  {musicList.map((music) => (
+                    <Style.MusicsWrapper
+                      key={music.trackId}
+                    >
+                      <MusicCard
+                        music={music}
+                        AddFavoriteSong={this.AddFavoriteSong}
+                        favorites={favoriteSongs}
+                      />
+                    </Style.MusicsWrapper>
+                  ))}
+                </div>
+              </>
+            )}
+        </Style.Container>
+      </Style.Wrapper>
     );
   }
 }

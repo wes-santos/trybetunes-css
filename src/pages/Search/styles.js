@@ -88,6 +88,7 @@ export const Album = styled.div`
   /* padding: 10px; */
   height: 440px;
   width: 31%;
+  box-shadow: #2E0259 0 0 20px 4px;
 
   a {
     color: white;

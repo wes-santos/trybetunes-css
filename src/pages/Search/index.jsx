@@ -117,10 +117,15 @@ export default class Search extends React.Component {
                       }) => (
                         <Style.Album key={collectionId}>
                           <Style.AlbumImageWrapper>
-                            <img
-                              src={artworkUrl100.replace('100x100', '600x600')}
-                              alt="album-artwork"
-                            />
+                            <Link
+                              to={`/album/${collectionId}`}
+                              data-testid={`link-to-album-${collectionId}`}
+                            >
+                              <img
+                                src={artworkUrl100.replace('100x100', '600x600')}
+                                alt="album-artwork"
+                              />
+                            </Link>
                           </Style.AlbumImageWrapper>
                           <Style.CollectionName>
                             <Link
