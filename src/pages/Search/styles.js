@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import searchIcon from './searchIcon.svg';
 
+export const ContainerWrapper = styled.div`
+  width: 60%;
+  margin: 0 auto;
+`;
+
 export const Container = styled.form`
   align-items: center;
   display: flex;
@@ -18,7 +23,7 @@ export const Input = styled.input`
   color: #21038C;
   font-size: 18px;
   padding: 20px;
-  width: 700px;
+  width: 70%;
   transition: 0.3s ease-in-out;
 
   &:hover {
@@ -45,6 +50,7 @@ export const Button = styled.button`
   margin-left: 20px;
   padding: 20px 60px;
   transition: 0.4s ease-in-out;
+  width: 30%;
  
   &:hover {
     opacity: 0.7;
@@ -59,18 +65,19 @@ export const Subtitle = styled.h2`
   -webkit-text-fill-color: transparent;
   font-size: 24px;
   margin: 20px 0;
+  margin-left: 10px;
 `;
 
 export const SearchResults = styled.div`
   margin: 0 auto;
-  width: 57.5%;
+  width: 100%;
 `;
 
 export const AlbumsContainer = styled.div`
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  align-items: center;
   justify-content: space-evenly;
 `;
 
@@ -79,13 +86,13 @@ export const Album = styled.div`
   background: linear-gradient(146deg, rgba(188,61,242,1) 0%, rgba(4,217,196,1) 100%);
   border-radius: 10px;
   /* padding: 10px; */
+  height: 440px;
   width: 31%;
 
   a {
     color: white;
     text-decoration: none;
     font-weight: 700;
-    padding: 10px;
   }
 `;
 
@@ -105,4 +112,8 @@ export const AlbumImageWrapper = styled.div`
     border-bottom: 2px solid white;
     border-radius: 10px 10px 0 0;
   }
+`;
+
+export const CollectionName = styled.div`
+  padding-left: 10px;
 `;
