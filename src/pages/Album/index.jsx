@@ -34,7 +34,18 @@ export default class Album extends React.Component {
       loadingFavorites: false,
     }));
 
+    const root = document.getElementById('root');
+    root.style.height = '100vh';
+
     this.setMusics(musicList, album);
+  }
+
+  componentDidUpdate() {
+    const root = document.getElementById('root');
+    const { loading } = this.state;
+    if (loading) {
+      root.style.height = '100%';
+    }
   }
 
   setFavoriteSongs = (favoriteSongs) => {
