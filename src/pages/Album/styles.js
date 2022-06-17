@@ -27,12 +27,11 @@ export const Subtitle = styled.h3`
 `;
 
 export const ImageContainer = styled.div`
-  
   img {
     border-radius: 10px;
     height: 22em;
     margin-bottom: 10px;
-    box-shadow: 6px 6px 15px rgba(33, 3, 140, 0.1);;
+    box-shadow: 6px 6px 15px rgba(33, 3, 140, 0.1);
   }
 `;
 
@@ -51,4 +50,6 @@ export const Lala = styled.div`
   display: flex;
   justify-content: center;
   padding: 2em;
+  max-height: 500px;
+  overflow: auto;
 `;
