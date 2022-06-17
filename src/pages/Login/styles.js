@@ -53,7 +53,7 @@ export const Container = styled.main`
 
 export const ImageWrapper = styled.div`
   align-items: center;
-  background-color: white;
+  background-color: rgba(42,8,89,1);
   display: flex;
   height: 100%;
   justify-content: center;

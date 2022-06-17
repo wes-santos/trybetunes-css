@@ -15,7 +15,7 @@ export const EditProfile = styled.div`
 export const Profile = styled.div`
   align-items: start;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 50%;
   margin: 3% auto;
   background-color: rgba(0, 0, 0, 0.3);
