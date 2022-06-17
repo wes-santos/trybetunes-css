@@ -4,6 +4,7 @@ import searchIcon from './searchIcon.svg';
 export const ContainerWrapper = styled.div`
   width: 60%;
   margin: 0 auto;
+  margin-bottom: 80px;
 `;
 
 export const Container = styled.form`
@@ -99,6 +100,11 @@ export const Album = styled.div`
     color: white;
     text-decoration: none;
     font-weight: 700;
+    transition: all 0.3s ease-in-out;
+  }
+
+  a:hover {
+    opacity: 0.8;
   }
 `;
 

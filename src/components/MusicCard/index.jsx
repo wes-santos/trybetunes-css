@@ -60,7 +60,9 @@ class MusicCard extends React.Component {
             />
           </label>
           <p>
-            {music.trackName}
+            {music.trackName.length > 67
+              ? `${music.trackName.substring(0, 67)}...`
+              : music.trackName}
           </p>
         </Style.MusicContainer>
         <Style.Player>

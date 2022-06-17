@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import * as Style from './styles';
 import { getUser } from '../../services/userAPI';
@@ -21,11 +22,29 @@ export default class Header extends React.Component {
     return (
       <Style.Header data-testid="header-component">
         <Style.Nav>
-          <Link to="/search" data-testid="link-to-search">Pesquisar</Link>
+          <NavLink
+            to="/search"
+            data-testid="link-to-search"
+            // style={(isActive) => ({
+            //   color: isActive ? '#2E0259' : '#fff',
+            // })}
+          >
+            Pesquisar
+          </NavLink>
           <Style.VRow />
-          <Link to="/favorites" data-testid="link-to-favorites">Favoritas</Link>
+          <NavLink
+            to="/favorites"
+            data-testid="link-to-favorites"
+          >
+            Favoritas
+          </NavLink>
           <Style.VRow />
-          <Link to="/profile" data-testid="link-to-profile">Meu Perfil</Link>
+          <NavLink
+            to="/profile"
+            data-testid="link-to-profile"
+          >
+            Meu Perfil
+          </NavLink>
         </Style.Nav>
         <Style.NavUser>
           <img src={profileIcon} alt="profile-icon" />

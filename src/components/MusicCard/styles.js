@@ -15,6 +15,8 @@ export const Container = styled.div`
 export const Button = styled.button`
   background-color: transparent;
   border: none;
+  height: 25px;
+  width: 25px;
 
   img {
     width: 100%;

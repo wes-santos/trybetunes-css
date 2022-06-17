@@ -26,6 +26,11 @@ export const Nav = styled.nav`
     cursor: pointer;
     opacity: 0.9;
   }
+
+  .active {
+    color: white;
+    text-decoration: underline;
+  }
 `;
 
 export const VRow = styled.div`

@@ -131,10 +131,16 @@ export default class Search extends React.Component {
                               to={`/album/${collectionId}`}
                               data-testid={`link-to-album-${collectionId}`}
                             >
-                              {collectionName}
+                              {collectionName.length > 48
+                                ? `${collectionName.substring(0, 48)}...`
+                                : collectionName}
                             </Link>
                           </Style.CollectionName>
-                          <Style.ArtistName>{ArtistName}</Style.ArtistName>
+                          <Style.ArtistName>
+                            {ArtistName.length > 28
+                              ? `${ArtistName.substring(0, 26)}...`
+                              : ArtistName}
+                          </Style.ArtistName>
                         </Style.Album>
                       ),
                     )}

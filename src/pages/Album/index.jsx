@@ -103,10 +103,14 @@ export default class Album extends React.Component {
                         />
                       </Style.ImageContainer>
                       <Style.Title>
-                        {album.artistName}
+                        {album.artistName.length > 18
+                          ? `${album.artistName.substring(0, 18)}...`
+                          : album.artistName}
                       </Style.Title>
                       <Style.Subtitle>
-                        {album.collectionName}
+                        {album.collectionName.length > 48
+                          ? `${album.collectionName.substring(0, 48)}...`
+                          : album.collectionName}
                       </Style.Subtitle>
                     </>
                     )}
