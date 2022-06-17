@@ -92,15 +92,15 @@ export default class Album extends React.Component {
             )
             : (
               <>
-                <div className="title-content">
+                <Style.ImageWrapper>
                   {album && (
                   <>
-                    <Style.ImageWrapper>
+                    <Style.ImageContainer>
                       <img
                         src={album.artworkUrl100.replace('100x100', '600x600')}
                         alt="album artwork"
                       />
-                    </Style.ImageWrapper>
+                    </Style.ImageContainer>
                     <Style.Title>
                       {album.artistName}
                     </Style.Title>
@@ -109,7 +109,7 @@ export default class Album extends React.Component {
                     </Style.Subtitle>
                   </>
                   )}
-                </div>
+                </Style.ImageWrapper>
                 <div className="playlist">
                   {musicList.map((music) => (
                     <Style.MusicsWrapper
