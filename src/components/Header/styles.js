@@ -20,11 +20,12 @@ export const Nav = styled.nav`
     font-size: 18px;
     font-weight: 700;
     margin-right: 10px;
+    transition: all 0.2s ease-in-out;
   }
 
   a:hover {
     cursor: pointer;
-    opacity: 0.9;
+    opacity: 0.7;
   }
 
   .active {
