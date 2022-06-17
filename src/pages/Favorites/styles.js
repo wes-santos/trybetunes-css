@@ -17,6 +17,8 @@ export const Container = styled.div`
 export const MusicsContainer = styled.div`
   margin: 0 auto;
   width: 60%;
+  max-height: 400px;
+  overflow: auto;
 `;
 
 export const TrackContainer = styled.div`
