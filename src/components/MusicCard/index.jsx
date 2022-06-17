@@ -6,6 +6,8 @@ import { withRouter } from 'react-router-dom';
 import play from './play.png';
 import pause from './pause.png';
 import * as Style from './styles';
+import emptyHeart from './emptyHeart.svg';
+import filledHeart from './filledHeart.svg';
 
 class MusicCard extends React.Component {
   state = {
@@ -44,14 +46,19 @@ class MusicCard extends React.Component {
                 .replace('.', ':')
             }
           </Style.MusicTime>
-          <input
-            name="favorite"
-            id={`favorite-${music.trackId}`}
-            value={music.trackId}
-            type="checkbox"
-            checked={favorites.some((s) => s.trackId === music.trackId)}
-            onChange={AddFavoriteSong}
-          />
+          <label htmlFor={`favorite-${music.trackId}`}>
+            {favorites.some((s) => s.trackId === music.trackId)
+              ? <img src={emptyHeart} alt="empty heart" />
+              : <img src={filledHeart} alt="filled heart" />}
+            <input
+              name="favorite"
+              id={`favorite-${music.trackId}`}
+              value={music.trackId}
+              type="checkbox"
+              checked={favorites.some((s) => s.trackId === music.trackId)}
+              onChange={AddFavoriteSong}
+            />
+          </label>
           <p>
             {music.trackName}
           </p>

@@ -35,6 +35,18 @@ export const MusicContainer = styled.div`
     border-radius: 10px;
     height: 50px;
   }
+
+  label {
+    cursor: pointer;
+  }
+
+  label img {
+    height: 35px;
+  }
+
+  input {
+    display: none;
+  }
 `;
 
 export const Player = styled.div`

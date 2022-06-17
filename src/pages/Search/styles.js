@@ -18,7 +18,7 @@ export const Input = styled.input`
   background-repeat: no-repeat;
   background-position: right;
   background-origin: content-box;
-  border: 3px solid #973DF2;
+  border: none;
   border-radius: 10px;
   color: #21038C;
   font-size: 18px;
@@ -54,6 +54,11 @@ export const Button = styled.button`
  
   &:hover {
     opacity: 0.7;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5
   }
 `;
 

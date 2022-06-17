@@ -28,6 +28,11 @@ export const Button = styled.button`
   &:hover {
     opacity: 0.7;
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `;
 
 export const Form = styled.form`
