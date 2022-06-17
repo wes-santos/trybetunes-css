@@ -29,24 +29,16 @@ export default class MusicCard extends React.Component {
     const { isPlaying } = this.state;
     return (
       <Style.Container>
-        <p>
-          {
-            ((music.trackTimeMillis / 1000) / 60)
-              .toFixed(2)
-              .toString()
-              .replace('.', ':')
-          }
-        </p>
-        <label htmlFor={`favorite-${music.trackId}`}>
-          {/* <input
-            name="favorite"
-            id={`favorite-${music.trackId}`}
-            value={music.trackId}
-            type="checkbox"
-            checked={favorites.some((s) => s.trackId === music.trackId)}
-            onChange={AddFavoriteSong}
-          /> */}
-          <input
+        <Style.MusicContainer>
+          <Style.MusicTime>
+            {
+              ((music.trackTimeMillis / 1000) / 60)
+                .toFixed(2)
+                .toString()
+                .replace('.', ':')
+            }
+          </Style.MusicTime>
+          <Style.FavoriteCheckbox
             name="favorite"
             id={`favorite-${music.trackId}`}
             value={music.trackId}
@@ -54,28 +46,30 @@ export default class MusicCard extends React.Component {
             checked={favorites.some((s) => s.trackId === music.trackId)}
             onChange={AddFavoriteSong}
           />
-        </label>
-        <p>
-          {music.trackName}
-        </p>
-        <audio
-          data-testid="audio-component"
-          src={music.previewUrl}
-        >
-          <track kind="captions" />
-          O seu navegador não suporta o elemento
-          {' '}
-          <code>audio</code>
-          .
-        </audio>
-        <Style.Button
-          onClick={this.lalala}
-          type="button"
-        >
-          { !isPlaying
-            ? <img src={play} alt="play button" />
-            : <img src={pause} alt="pause button" />}
-        </Style.Button>
+          <p>
+            {music.trackName}
+          </p>
+        </Style.MusicContainer>
+        <Style.Player>
+          <audio
+            data-testid="audio-component"
+            src={music.previewUrl}
+          >
+            <track kind="captions" />
+            O seu navegador não suporta o elemento
+            {' '}
+            <code>audio</code>
+            .
+          </audio>
+          <Style.Button
+            onClick={this.lalala}
+            type="button"
+          >
+            { !isPlaying
+              ? <img src={play} alt="play button" />
+              : <img src={pause} alt="pause button" />}
+          </Style.Button>
+        </Style.Player>
       </Style.Container>
     );
   }
