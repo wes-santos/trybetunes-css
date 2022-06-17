@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
+import { withRouter } from 'react-router-dom';
 import play from './play.png';
 import pause from './pause.png';
 import * as Style from './styles';
 
-export default class MusicCard extends React.Component {
+class MusicCard extends React.Component {
   state = {
     isPlaying: false,
   };
@@ -25,11 +26,16 @@ export default class MusicCard extends React.Component {
   };
 
   render() {
-    const { music, AddFavoriteSong, favorites } = this.props;
+    const {
+      music, AddFavoriteSong, favorites, history, artwork,
+    } = this.props;
     const { isPlaying } = this.state;
     return (
       <Style.Container>
         <Style.MusicContainer>
+          { history.location.pathname.includes('favorites') ? (
+            <img src={artwork} alt="album artwork" />
+          ) : '' }
           <Style.MusicTime>
             {
               ((music.trackTimeMillis / 1000) / 60)
@@ -38,7 +44,7 @@ export default class MusicCard extends React.Component {
                 .replace('.', ':')
             }
           </Style.MusicTime>
-          <Style.FavoriteCheckbox
+          <input
             name="favorite"
             id={`favorite-${music.trackId}`}
             value={music.trackId}
@@ -90,4 +96,9 @@ MusicCard.propTypes = {
       trackId: PropTypes.number.isRequired,
     }).isRequired,
   ).isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  history: PropTypes.objectOf(PropTypes.object).isRequired,
+  artwork: PropTypes.string.isRequired,
 };
+
+export default withRouter(MusicCard);

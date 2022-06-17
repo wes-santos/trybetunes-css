@@ -5,15 +5,11 @@ export const Container = styled.div`
   align-items: center;
   display: flex;
   color: white;
-  padding: 1em 0.8em;
+  padding: 1em 2em;
   margin-left: 3em;
   justify-content: space-between;
   border-top: 1px solid #04D9C4;
   border-bottom: 1px solid #04D9C4;
-`;
-
-export const FavoriteCheckbox = styled.input`
-  border: 8px solid red;
 `;
 
 export const Button = styled.button`
@@ -32,7 +28,13 @@ export const MusicTime = styled.p`
 
 export const MusicContainer = styled.div`
   display: flex;
+  align-items: center;
   gap: 2em;
+
+  img {
+    border-radius: 10px;
+    height: 50px;
+  }
 `;
 
 export const Player = styled.div`

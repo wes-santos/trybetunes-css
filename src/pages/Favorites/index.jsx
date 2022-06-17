@@ -8,6 +8,7 @@ import {
   removeSong,
 } from '../../services/favoriteSongsAPI';
 import { LoadingWrapper, Spinner } from '../../components/Loading';
+import * as Style from './styles';
 
 export default class Favorites extends React.Component {
   state = {
@@ -43,26 +44,31 @@ export default class Favorites extends React.Component {
   render() {
     const { favoriteSongs, loading } = this.state;
     return (
-      <div data-testid="page-favorites">
+      <Style.Main data-testid="page-favorites">
         <Header />
-
-        {loading
-          ? (
-            <LoadingWrapper>
-              <Spinner />
-            </LoadingWrapper>
-          )
-          : (
-            favoriteSongs.map((song) => (
-              <MusicCard
-                key={song.trackId}
-                music={song}
-                AddFavoriteSong={this.onFavoriteChange}
-                favorites={favoriteSongs}
-              />
-            ))
-          )}
-      </div>
+        <Style.Wrapper>
+          <h2>Músicas Favoritas</h2>
+          <Style.MusicsContainer>
+            {loading
+              ? (
+                <LoadingWrapper>
+                  <Spinner />
+                </LoadingWrapper>
+              )
+              : (
+                favoriteSongs.map((song) => (
+                  <MusicCard
+                    key={song.trackId}
+                    music={song}
+                    AddFavoriteSong={this.onFavoriteChange}
+                    favorites={favoriteSongs}
+                    artwork={song.artworkUrl100}
+                  />
+                ))
+              )}
+          </Style.MusicsContainer>
+        </Style.Wrapper>
+      </Style.Main>
     );
   }
 }
