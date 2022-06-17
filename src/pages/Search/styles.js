@@ -25,10 +25,10 @@ export const Input = styled.input`
   font-size: 18px;
   padding: 20px;
   width: 70%;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
 
   &:hover {
-    border-color: #04D9C4;
+    border: 1px solid #04D9C4;
   }
 
   &::placeholder {
@@ -36,8 +36,8 @@ export const Input = styled.input`
   }
 
   &:focus {
-    border-color: #04D9C4;
     outline: none;
+    border: 1px solid #04D9C4;
   }
 `;
 
