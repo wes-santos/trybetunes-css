@@ -92,11 +92,82 @@ export const AlbumsContainer = styled.div`
 `;
 
 export const Album = styled.div`
+  @media (min-width: 2159px) {
+    height: 460px;
+  }
+
+  @media (min-height: 1919px) {
+    height: 20px;
+    background-color: red;
+  }
+
+  
   background: linear-gradient(146deg, rgba(188,61,242,1) 0%, rgba(4,217,196,1) 100%);
   border-radius: 10px;
-  height: 460px;
+  height: 390px;
   width: 31%;
   box-shadow: #2E0259 0 0 20px 4px;
+  
+  @media(max-width: 900px) {
+    width: 100%;
+    height: 90%;
+  }
+
+  @media(min-width: 901px) and (max-width: 1500px) {
+    width: 48%;
+  }
+
+  @media(min-width: 1544px) {
+    height: 400px;
+  }
+
+  @media (min-width: 1008px) {
+    height: 410px;
+  }
+
+  @media (min-width: 1067px) {
+    height: 430px;
+  }
+
+  @media (min-width: 1140px) {
+    height: 450px;
+  }
+
+  @media (min-width: 1213px) {
+    height: 480px;
+  }
+
+  @media (min-width: 1281px) {
+    height: 500px;
+  }
+
+  @media (min-width: 1474px) {
+    height: 520px;
+  }
+
+  @media (min-width: 1501px) {
+    height: 420px;
+  }
+
+  @media(min-width: 1609px) {
+    height: 420px;
+  }
+
+  @media(min-width: 1715px) {
+    height: 440px;
+  }
+
+  @media (min-width: 1878px) {
+    height: 460px;
+  }
+
+  @media (min-width: 1920px) {
+    height: 500px;
+  }
+
+  /* @media(min-width: 380px) {
+    height: 360px;
+  }  */
 
   a {
     color: white;
