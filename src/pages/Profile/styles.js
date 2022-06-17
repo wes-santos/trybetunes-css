@@ -29,6 +29,7 @@ export const ProfileLeftContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 120px;
+  width: 50%;
 
   a {
     text-decoration: none;

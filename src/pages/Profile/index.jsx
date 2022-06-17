@@ -48,11 +48,11 @@ export default class Profile extends React.Component {
                     <h3>
                       Email
                     </h3>
-                    <p>{user.email || 'Funcionalidade em construção'}</p>
+                    <p>{user.email || 'Você ainda não editou o seu e-mail, clique em Editar perfil ao lado para isso'}</p>
                     <h3>
                       Descrição
                     </h3>
-                    <p>{user.description || 'Funcionalidade em construção'}</p>
+                    <p>{user.description || 'Você ainda não editou a sua descrição, clique em Editar perfil ao lado para isso'}</p>
                   </Style.ProfileRightContainer>
                 </Style.Profile>
               )

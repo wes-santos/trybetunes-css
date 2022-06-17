@@ -92,13 +92,9 @@ export const AlbumsContainer = styled.div`
 `;
 
 export const Album = styled.div`
-  /* background-color: #023E73; */
   background: linear-gradient(146deg, rgba(188,61,242,1) 0%, rgba(4,217,196,1) 100%);
   border-radius: 10px;
-  /* padding: 10px; */
-  /* height: 380px; */
-  min-height: 380px;
-  height: 440px;
+  height: 460px;
   width: 31%;
   box-shadow: #2E0259 0 0 20px 4px;
 
