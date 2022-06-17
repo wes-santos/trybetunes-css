@@ -37,7 +37,7 @@ export const VRow = styled.div`
   background-color: #F1F0FF;
   padding: 1px;
   width: 1px;
-  height: 100%;
+  height: 50%;
   margin: 0 30px;
 `;
 

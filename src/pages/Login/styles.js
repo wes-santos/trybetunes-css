@@ -33,6 +33,10 @@ export const Button = styled.button`
     opacity: 0.5;
     cursor: not-allowed;
   }
+
+  &:active {
+    opacity: 0.3;
+  }
 `;
 
 export const Form = styled.form`

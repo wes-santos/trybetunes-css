@@ -61,6 +61,10 @@ export const Button = styled.button`
     cursor: not-allowed;
     opacity: 0.5
   }
+  
+  &:active {
+    opacity: 0.3;
+  }
 `;
 
 export const Subtitle = styled.h2`
