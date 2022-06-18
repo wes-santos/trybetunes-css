@@ -8,6 +8,15 @@ export const Wrapper = styled.div`
     font-size: 32px;
     text-align: center;
   }
+
+  background-image: linear-gradient(90deg, #470587 0%, #55099f 50%, #470587 100%);
+
+  @media (max-width: 870px) {
+    h2 {
+      margin: 20px 0;
+    }
+  }
+
 `;
 
 export const Container = styled.div`
@@ -17,8 +26,15 @@ export const Container = styled.div`
 export const MusicsContainer = styled.div`
   margin: 0 auto;
   width: 60%;
-  max-height: 400px;
   overflow: auto;
+
+  @media (max-width: 870px) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+  }
 `;
 
 export const TrackContainer = styled.div`

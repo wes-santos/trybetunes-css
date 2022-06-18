@@ -15,8 +15,10 @@ export const Container = styled.div`
     margin: 0 2em;
   }
 
-  @media (max-width: 321px) {
+  @media (max-width: 870px) {
    padding: 0.5em 1em;
+   width: 80vw;
+   margin: 0;
   }
 `;
 
@@ -31,7 +33,7 @@ export const Button = styled.button`
     height: 100%;
   }
 
-  @media (max-width: 321px) {
+  @media (max-width: 870px) {
    height: 20px;
    width: 20px; 
   }
@@ -63,11 +65,13 @@ export const MusicContainer = styled.div`
     display: none;
   }
 
-  @media (max-width: 321px) {
+  @media (max-width: 870px) {
     gap: 1em;
 
     img {
-      height: 25px;
+      height: 40px;
+      border-radius: 5px;
+
     }
 
     label img {
@@ -86,7 +90,7 @@ export const Player = styled.div`
   @media (max-width: 614px) {
     margin-left: 8em;
   }
-  @media (max-width: 321px) {
+  @media (max-width: 870px) {
     margin-left: 0.5em;
   }
 
