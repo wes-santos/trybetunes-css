@@ -9,6 +9,7 @@ export const Container = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
+  background-image: linear-gradient(90deg, #470587 0%, #55099f 50%, #470587 100%);
   /* min-height: 80vh; */
   /* max-height: 100vh; */
 `;
