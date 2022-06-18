@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import loginBackground from './loginBackground.svg';
+// import loginBackground from './loginBackground.svg';
+import party from './party.png';
 
 export const Title = styled.h1`
   color: white;
@@ -59,7 +60,7 @@ export const ImageWrapper = styled.div`
   justify-content: center;
   padding: 20px;
   width: 100%;
-  background-image: url(${loginBackground});
+  background-image: url(${party});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
