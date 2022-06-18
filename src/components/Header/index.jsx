@@ -43,7 +43,7 @@ export default class Header extends React.Component {
             to="/profile"
             data-testid="link-to-profile"
           >
-            Meu Perfil
+            {window.innerWidth > 320 ? 'Meu Perfil' : 'Perfil'}
           </NavLink>
         </Style.Nav>
         <Style.NavUser>

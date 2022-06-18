@@ -7,6 +7,15 @@ export const Header = styled.header`
   font-size: 18px;
   justify-content: space-between;
   padding: 35px 60px;
+
+  @media (max-width: 488px) {
+    padding: 25px 30px;
+    justify-content: center;
+  }
+
+  @media (max-width: 707px) {
+    justify-content: center;
+  }
 `;
 
 export const Nav = styled.nav`
@@ -32,6 +41,20 @@ export const Nav = styled.nav`
     color: white;
     text-decoration: underline;
   }
+
+  @media (max-width: 488px) {
+    a {
+      font-size: 14px;
+      margin-right: 0;
+    }
+  }
+  
+  @media (min-width: 530px) {
+    a {
+      margin-right: 5px;
+      font-size: 16px;
+    }
+  }
 `;
 
 export const VRow = styled.div`
@@ -40,10 +63,22 @@ export const VRow = styled.div`
   width: 1px;
   height: 50%;
   margin: 0 30px;
+
+  @media (min-width: 530px) {
+    margin: 0 15px;
+  }
+
+  @media (max-width: 488px) {
+    margin: 0 10px;
+  }
 `;
 
 export const NavUser = styled.div`
   align-items: center;
   display: flex;
   gap: 8px;
+
+  @media (max-width: 707px) {
+    display: none;
+  }
 `;
