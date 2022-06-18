@@ -8,8 +8,8 @@ export const Container = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  min-height: 80vh;
-  max-height: 100vh;
+  /* min-height: 80vh; */
+  /* max-height: 100vh; */
 `;
 
 export const Form = styled.form`
@@ -20,7 +20,6 @@ export const Form = styled.form`
   padding: 40px;
   width: 34em;
   gap: 27px;
-  max-height: 685;
 
   img {
     height: 100px;
@@ -68,6 +67,15 @@ export const NameContainer = styled.div`
 
   input {
     width: 100%;
+  }
+
+  @media (max-width: 356px) {
+    flex-direction: column;
+    gap: 20px;
+
+    h3 {
+      margin-bottom: 0;
+    }
   }
 `;
 
