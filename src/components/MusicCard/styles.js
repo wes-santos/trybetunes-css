@@ -10,6 +10,14 @@ export const Container = styled.div`
   justify-content: space-between;
   border-top: 1px solid #04D9C4;
   border-bottom: 1px solid #04D9C4;
+
+  @media (max-width: 1152px) {
+    margin: 0 2em;
+  }
+
+  @media (max-width: 321px) {
+   padding: 0.5em 1em;
+  }
 `;
 
 export const Button = styled.button`
@@ -21,6 +29,11 @@ export const Button = styled.button`
   img {
     width: 100%;
     height: 100%;
+  }
+
+  @media (max-width: 321px) {
+   height: 20px;
+   width: 20px; 
   }
 `;
 
@@ -49,8 +62,32 @@ export const MusicContainer = styled.div`
   input {
     display: none;
   }
+
+  @media (max-width: 321px) {
+    gap: 1em;
+
+    img {
+      height: 25px;
+    }
+
+    label img {
+      height: 20px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
 `;
 
 export const Player = styled.div`
   margin-left: 12em;
+
+  @media (max-width: 614px) {
+    margin-left: 8em;
+  }
+  @media (max-width: 321px) {
+    margin-left: 0.5em;
+  }
+
 `;

@@ -33,59 +33,109 @@ class MusicCard extends React.Component {
     } = this.props;
     const { isPlaying } = this.state;
     return (
-      <Style.Container>
-        <Style.MusicContainer>
-          { history.location.pathname.includes('favorites') ? (
-            <img src={artwork} alt="album artwork" />
-          ) : '' }
-          <Style.MusicTime>
-            {
-              ((music.trackTimeMillis / 1000) / 60)
-                .toFixed(2)
-                .toString()
-                .replace('.', ':')
-            }
-          </Style.MusicTime>
-          <label htmlFor={`favorite-${music.trackId}`}>
-            {favorites.some((s) => s.trackId === music.trackId)
-              ? <img src={emptyHeart} alt="empty heart" />
-              : <img src={filledHeart} alt="filled heart" />}
-            <input
-              name="favorite"
-              id={`favorite-${music.trackId}`}
-              value={music.trackId}
-              type="checkbox"
-              checked={favorites.some((s) => s.trackId === music.trackId)}
-              onChange={AddFavoriteSong}
-            />
-          </label>
-          <p>
-            {music.trackName.length > 67
-              ? `${music.trackName.substring(0, 67)}...`
-              : music.trackName}
-          </p>
-        </Style.MusicContainer>
-        <Style.Player>
-          <audio
-            data-testid="audio-component"
-            src={music.previewUrl}
-          >
-            <track kind="captions" />
-            O seu navegador não suporta o elemento
-            {' '}
-            <code>audio</code>
-            .
-          </audio>
-          <Style.Button
-            onClick={this.lalala}
-            type="button"
-          >
-            { !isPlaying
-              ? <img src={play} alt="play button" />
-              : <img src={pause} alt="pause button" />}
-          </Style.Button>
-        </Style.Player>
-      </Style.Container>
+      window.innerWidth > 320
+        ? (
+          <Style.Container>
+            <Style.MusicContainer>
+              { history.location.pathname.includes('favorites') ? (
+                <img src={artwork} alt="album artwork" />
+              ) : '' }
+              <Style.MusicTime>
+                {
+                ((music.trackTimeMillis / 1000) / 60)
+                  .toFixed(2)
+                  .toString()
+                  .replace('.', ':')
+              }
+              </Style.MusicTime>
+              <label htmlFor={`favorite-${music.trackId}`}>
+                {favorites.some((s) => s.trackId === music.trackId)
+                  ? <img src={emptyHeart} alt="empty heart" />
+                  : <img src={filledHeart} alt="filled heart" />}
+                <input
+                  name="favorite"
+                  id={`favorite-${music.trackId}`}
+                  value={music.trackId}
+                  type="checkbox"
+                  checked={favorites.some((s) => s.trackId === music.trackId)}
+                  onChange={AddFavoriteSong}
+                />
+              </label>
+              <p>
+                {music.trackName.length > 67
+                  ? `${music.trackName.substring(0, 67)}...`
+                  : music.trackName}
+              </p>
+            </Style.MusicContainer>
+            <Style.Player>
+              <audio
+                data-testid="audio-component"
+                src={music.previewUrl}
+              >
+                <track kind="captions" />
+                O seu navegador não suporta o elemento
+                {' '}
+                <code>audio</code>
+                .
+              </audio>
+              <Style.Button
+                onClick={this.lalala}
+                type="button"
+              >
+                { !isPlaying
+                  ? <img src={play} alt="play button" />
+                  : <img src={pause} alt="pause button" />}
+              </Style.Button>
+            </Style.Player>
+          </Style.Container>
+        )
+        : (
+          <Style.Container>
+            <Style.MusicContainer>
+              { history.location.pathname.includes('favorites') ? (
+                <img src={artwork} alt="album artwork" />
+              ) : '' }
+              <p>
+                {music.trackName.length > 67
+                  ? `${music.trackName.substring(0, 67)}...`
+                  : music.trackName}
+              </p>
+              <label htmlFor={`favorite-${music.trackId}`}>
+                {favorites.some((s) => s.trackId === music.trackId)
+                  ? <img src={emptyHeart} alt="empty heart" />
+                  : <img src={filledHeart} alt="filled heart" />}
+                <input
+                  name="favorite"
+                  id={`favorite-${music.trackId}`}
+                  value={music.trackId}
+                  type="checkbox"
+                  checked={favorites.some((s) => s.trackId === music.trackId)}
+                  onChange={AddFavoriteSong}
+                />
+              </label>
+            </Style.MusicContainer>
+            <Style.Player>
+              <audio
+                data-testid="audio-component"
+                src={music.previewUrl}
+              >
+                <track kind="captions" />
+                O seu navegador não suporta o elemento
+                {' '}
+                <code>audio</code>
+                .
+              </audio>
+              <Style.Button
+                onClick={this.lalala}
+                type="button"
+              >
+                { !isPlaying
+                  ? <img src={play} alt="play button" />
+                  : <img src={pause} alt="pause button" />}
+              </Style.Button>
+            </Style.Player>
+          </Style.Container>
+        )
     );
   }
 }
