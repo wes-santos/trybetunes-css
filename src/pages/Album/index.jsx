@@ -92,7 +92,7 @@ export default class Album extends React.Component {
                 </LoadingWrapper>
               )
               : (
-                <Style.Lala>
+                <Style.AlbumWrapper>
                   <Style.ImageWrapper>
                     {album && (
                     <>
@@ -128,7 +128,7 @@ export default class Album extends React.Component {
                       </Style.MusicsWrapper>
                     ))}
                   </div>
-                </Style.Lala>
+                </Style.AlbumWrapper>
               )}
           </Style.Container>
         </Style.Wrapper>

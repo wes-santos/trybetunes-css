@@ -15,7 +15,7 @@ class MusicCard extends React.Component {
   };
 
   // eslint-disable-next-line class-methods-use-this
-  lalala = ({ target }) => {
+  handleIconPlayer = ({ target }) => {
     const { isPlaying } = this.state;
     const audio = target.parentElement.previousSibling;
     if (!isPlaying) {
@@ -79,7 +79,7 @@ class MusicCard extends React.Component {
                 .
               </audio>
               <Style.Button
-                onClick={this.lalala}
+                onClick={this.handleIconPlayer}
                 type="button"
               >
                 { !isPlaying
@@ -126,7 +126,7 @@ class MusicCard extends React.Component {
                 .
               </audio>
               <Style.Button
-                onClick={this.lalala}
+                onClick={this.handleIconPlayer}
                 type="button"
               >
                 { !isPlaying

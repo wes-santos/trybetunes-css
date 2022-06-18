@@ -66,7 +66,7 @@ export const MusicsWrapper = styled.div`
 
 `;
 
-export const Lala = styled.div`
+export const AlbumWrapper = styled.div`
   align-items: start;
   border-radius: 20px;
   display: flex;
