@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   min-height: 100vh;
+  background-image: linear-gradient(90deg, #470587 0%, #55099f 50%, #470587 100%);
 `;
 
 export const Container = styled.div`
