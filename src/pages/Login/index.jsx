@@ -50,7 +50,7 @@ export default class Login extends React.Component {
               type="text"
               data-testid="login-name-input"
               value={formName}
-              placeholder="Nome"
+              placeholder="Digite seu nome"
               onChange={this.handleChangeForm}
             />
             <Style.Button

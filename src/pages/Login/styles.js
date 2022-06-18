@@ -13,6 +13,18 @@ export const Title = styled.h1`
   &:hover {
     color: #ACF2EB;
   }
+
+  @media (max-width: 545px) {
+   font-size: 3.5em; 
+  }
+
+  @media (max-width: 421px) {
+   font-size: 3em; 
+  }
+
+  @media (max-width: 347px) {
+    font-size: 2.5em;
+  }
 `;
 
 export const Button = styled.button`
@@ -38,12 +50,29 @@ export const Button = styled.button`
   &:active {
     opacity: 0.3;
   }
+
+  @media (max-width: 545px) {
+    padding: 15px 150px;
+    font-size: 18px;
+  }
+
+  @media (max-width: 421px) {
+    padding: 15px 120px; 
+  }
+
+  @media (max-width: 347px) {
+    padding: 15px 90px;
+  }
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 545px) {
+    align-items: center;
+  }
 `;
 
 export const Container = styled.main`
@@ -64,6 +93,10 @@ export const ImageWrapper = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  @media (max-width: 1077px) {
+    display: none;
+  }
 `;
 
 export const FormWrapper = styled.div`
@@ -113,5 +146,33 @@ export const FormWrapper = styled.div`
 
   input:active {
     background-color: black;
+  }
+
+  @media (max-width: 1077px) {
+    border: none;
+    width: 100%;
+  }
+
+  @media (max-width: 545px) {
+    label {
+      font-size: 16px;
+    }
+
+    input {
+      font-size: 16px;
+      text-align: center;
+      border-width: 1px;
+      padding: 15px;
+    }
+
+    input::placeholder {
+      font-size: 16px;
+      text-align: center;
+      opacity: 0.5;
+    }
+
+    input:focus {
+      font-size: 16px;
+    }
   }
 `;
