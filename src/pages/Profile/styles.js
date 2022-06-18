@@ -70,7 +70,7 @@ export const Profile = styled.div`
     }
   }
 
-  @media (min-width: 801px) {
+  @media (min-width: 801px) and (max-width: 1142px) {
     width: 80%;
   }
 `;
