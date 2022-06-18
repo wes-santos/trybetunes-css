@@ -23,24 +23,53 @@ export default class Profile extends React.Component {
     return (
       <Style.Wrapper data-testid="page-profile">
         <Header />
-        <Style.Container>
-          {
-            loading
-              ? (
-                <LoadingWrapper>
-                  <Spinner />
-                </LoadingWrapper>
-              )
-              : (
-                <Style.Profile className="profile">
-                  <Style.ProfileLeftContainer>
+        {window.innerWidth > 800 ? (
+          <Style.Container>
+            {
+              loading
+                ? (
+                  <LoadingWrapper>
+                    <Spinner />
+                  </LoadingWrapper>
+                )
+                : (
+                  <Style.Profile className="profile">
+                    <Style.ProfileLeftContainer>
+                      <img src={user.image || profileImage} alt="user" />
+                      <Style.EditProfile>
+                        <Link to="profile/edit">Editar Perfil</Link>
+                      </Style.EditProfile>
+                    </Style.ProfileLeftContainer>
+                    <Style.ProfileRightContainer>
+                      <h3>
+                        Nome
+                      </h3>
+                      <p>{user.name}</p>
+                      <h3>
+                        Email
+                      </h3>
+                      <p>{user.email || 'Você ainda não editou o seu e-mail, clique em Editar perfil ao lado para isso'}</p>
+                      <h3>
+                        Descrição
+                      </h3>
+                      <p>{user.description || 'Você ainda não editou a sua descrição, clique em Editar perfil ao lado para isso'}</p>
+                    </Style.ProfileRightContainer>
+                  </Style.Profile>
+                )
+            }
+          </Style.Container>
+        ) : (
+          <Style.Container>
+            {
+              loading
+                ? (
+                  <LoadingWrapper>
+                    <Spinner />
+                  </LoadingWrapper>
+                )
+                : (
+                  <Style.Profile className="profile">
                     <img src={user.image || profileImage} alt="user" />
-                    <Style.EditProfile>
-                      <img data-testid="profile-image" src={user.image} alt="" />
-                      <Link to="profile/edit">Editar Perfil</Link>
-                    </Style.EditProfile>
-                  </Style.ProfileLeftContainer>
-                  <Style.ProfileRightContainer>
                     <h3>
                       Nome
                     </h3>
@@ -53,11 +82,13 @@ export default class Profile extends React.Component {
                       Descrição
                     </h3>
                     <p>{user.description || 'Você ainda não editou a sua descrição, clique em Editar perfil ao lado para isso'}</p>
-                  </Style.ProfileRightContainer>
-                </Style.Profile>
-              )
-          }
-        </Style.Container>
+                    <Link to="profile/edit">Editar Perfil</Link>
+                  </Style.Profile>
+                )
+            }
+          </Style.Container>
+        )}
+
       </Style.Wrapper>
     );
   }
