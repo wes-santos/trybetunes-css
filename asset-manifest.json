@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/trybetunes-css/static/js/main.ecfe073b.js",
+    "static/media/loginBackground.svg": "/trybetunes-css/static/media/loginBackground.73b82a928f5683e956c4ae9f073407f5.svg",
+    "static/media/emptyHeart.svg": "/trybetunes-css/static/media/emptyHeart.2c1545791ea667d30fa96347c2162de2.svg",
+    "static/media/filledHeart.svg": "/trybetunes-css/static/media/filledHeart.0e94611076de9bfaad01401753cba5da.svg",
+    "static/media/searchIcon.svg": "/trybetunes-css/static/media/searchIcon.a1a7855c4f4b57e9ad766150c1bedb03.svg",
+    "index.html": "/trybetunes-css/index.html",
+    "main.ecfe073b.js.map": "/trybetunes-css/static/js/main.ecfe073b.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.ecfe073b.js"
+  ]
+}
