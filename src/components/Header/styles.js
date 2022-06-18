@@ -8,13 +8,38 @@ export const Header = styled.header`
   justify-content: space-between;
   padding: 35px 60px;
 
+  a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  a:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
   @media (max-width: 488px) {
     padding: 25px 30px;
     justify-content: center;
+
+    a {
+      font-size: 14px;
+      margin-right: 0;
+    }
   }
 
   @media (max-width: 707px) {
     justify-content: center;
+    
+    a {
+      margin-right: 5px;
+      font-size: 16px;
+    }
   }
 `;
 
