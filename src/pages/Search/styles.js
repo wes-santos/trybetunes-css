@@ -92,16 +92,6 @@ export const AlbumsContainer = styled.div`
 `;
 
 export const Album = styled.div`
-  @media (min-width: 2159px) {
-    height: 460px;
-  }
-
-  @media (min-height: 1919px) {
-    height: 20px;
-    background-color: red;
-  }
-
-  
   background: linear-gradient(146deg, rgba(188,61,242,1) 0%, rgba(4,217,196,1) 100%);
   border-radius: 10px;
   height: 390px;
@@ -117,28 +107,44 @@ export const Album = styled.div`
     width: 48%;
   }
 
+  @media(min-width: 901px) {
+    height: 360px;
+  }
+
+  @media (min-width: 945px) {
+    height: 370px;
+  }
+
+  @media (min-width: 981px) {
+    height: 380px;
+  }
+
   @media(min-width: 1544px) {
-    height: 400px;
+    height: 390px;
   }
 
   @media (min-width: 1008px) {
-    height: 410px;
+    height: 400px;
   }
 
   @media (min-width: 1067px) {
-    height: 430px;
+    height: 410px;
   }
 
   @media (min-width: 1140px) {
-    height: 450px;
+    height: 440px;
   }
 
   @media (min-width: 1213px) {
-    height: 480px;
+    height: 460px;
   }
 
   @media (min-width: 1281px) {
-    height: 500px;
+    height: 470px;
+  }
+
+  @media (min-width: 1379px) {
+    height: 490px;
   }
 
   @media (min-width: 1474px) {
@@ -146,7 +152,7 @@ export const Album = styled.div`
   }
 
   @media (min-width: 1501px) {
-    height: 420px;
+    height: 380px;
   }
 
   @media(min-width: 1609px) {
@@ -161,13 +167,13 @@ export const Album = styled.div`
     height: 460px;
   }
 
-  @media (min-width: 1920px) {
-    height: 500px;
+  @media (min-width: 1917px) {
+    height: 470px;
   }
 
-  /* @media(min-width: 380px) {
-    height: 360px;
-  }  */
+  @media (min-width: 2147px) {
+    height: 490px;
+  }
 
   a {
     color: white;
